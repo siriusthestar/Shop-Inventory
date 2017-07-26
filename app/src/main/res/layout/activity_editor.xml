@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/list_padding"
+    android:scrollbarThumbVertical="@android:color/transparent"
+    tools:context=".EditorActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/product_name"
+            style="@style/ContainerLayout">
+
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="@string/product" />
+
+            <LinearLayout style="@style/HintEditTextStyle">
+
+                <EditText
+                    android:id="@+id/edit_name"
+                    style="@style/ProductDetail"
+                    android:hint="@string/product_name_hint"
+                    android:inputType="textCapWords" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/image"
+            style="@style/ProductImage"
+            tools:ignore="contentDescription" />
+
+        <LinearLayout
+            android:id="@+id/product_price"
+            style="@style/ContainerLayout"
+            android:layout_below="@id/product_name">
+
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="@string/price" />
+
+            <LinearLayout style="@style/HintEditTextStyle">
+
+                <EditText
+                    android:id="@+id/edit_price"
+                    style="@style/ProductDetail"
+                    android:layout_width="@dimen/padding_0"
+                    android:layout_weight="1"
+                    android:hint="@string/product_detail_hint"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/currency"
+                    style="@style/Currency"
+                    android:text="@string/currency_sign" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/quantity_layout"
+            style="@style/ContainerLayout"
+            android:layout_below="@id/product_price">
+
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="@string/quantity" />
+
+            <LinearLayout style="@style/HintEditTextStyle">
+
+                <Button
+                    android:id="@+id/decrease"
+                    style="@style/Buttons"
+                    android:text="@string/decrease_button" />
+
+                <EditText
+                    android:id="@+id/edit_quantity"
+                    style="@style/QuantityDetail"
+                    android:inputType="number"
+                    android:text="@string/product_detail_hint" />
+
+                <Button
+                    android:id="@+id/increase"
+                    style="@style/Buttons"
+                    android:focusable="false"
+                    android:text="@string/increase_button" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/quantity_layout">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_1"
+                android:layout_marginTop="@dimen/padding_medium"
+                android:background="@color/colorAccent" />
+
+            <Button
+                android:id="@+id/action_order"
+                style="@style/OrderButton" />
+
+            <TextView
+                android:id="@+id/info"
+                style="@style/TextStyle"
+                android:textAllCaps="true" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>
